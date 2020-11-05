@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS cards;
+
+CREATE TABLE cards (
+  id BIGINT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(256) TEXT NOT NULL,
+  cost INT CHECK (cost > 0 AND cost < 10)
+);
